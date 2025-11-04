@@ -37,7 +37,8 @@ import district from '../controllers/Masters/district.js';
 import voucherGroup from '../controllers/Masters/voucherGroup.js';
 import prodGroup from '../controllers/Masters/prodGroup.js';
 import defaultBanks from '../controllers/Masters/defaultBanks.js';
-import processMaster from '../controller/Masters/processMaster.js'
+import processMaster from '../controller/Masters/processMaster.js';
+import accountMasterSales from "../controller/Masters/accountMasterSales.js";
 
 const MastersRouter = express.Router();
 
@@ -305,5 +306,14 @@ MastersRouter.get('/processMaster',processMaster.getProcessDetails)
 MastersRouter.post('/processMaster',processMaster.postprocess)
 MastersRouter.put('/processMaster',processMaster.putProcess)
 MastersRouter.delete('/processMaster',processMaster.deleteProcess)
+
+MastersRouter.get("/accountMasterSales", accountMasterSales.getAccountMasterSales);
+MastersRouter.post("/accountMasterSales", accountMasterSales.insertAccountMasterSales);
+MastersRouter.put("/accountMasterSales", accountMasterSales.updateAccountMasterSales);
+MastersRouter.delete("/accountMasterSales", accountMasterSales.deleteAccountMasterSales);
+
+MastersRouter.get("/accountMasterSales/accounts", accountMasterSales.getAccountDropdown);
+MastersRouter.get("/accountMasterSales/salespersons", accountMasterSales.getSalesPersonDropdown);
+
 
 export default MastersRouter;

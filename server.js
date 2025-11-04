@@ -34,5 +34,5 @@ app.get('/', (req, res) => res.send('✅ Backend Server is Running Successfully!
 app.use('/api', apiRoutes);
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 Server running at http://192.168.3.113:${PORT}`);
+  console.log(`🚀 Server running at http://192.168.3.105:${PORT}`);
 });
